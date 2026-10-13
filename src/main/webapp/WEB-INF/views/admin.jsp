@@ -1,0 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" %><%@ include file="top.jspf" %>
+<h1>Administration</h1><div class="card"><h2>Create another staff account</h2><p>Only signed-in staff can create accounts. Use a strong password (at least 8 characters).</p><form method="post" class="form-grid"><label>Username<input name="username" required></label><label>Password<input type="password" name="password" minlength="8" required></label><label>Role<select name="role"><option>ADMIN</option><option>LIBRARIAN</option></select></label><button>Create account</button></form></div>
+<div class="card"><h2>Operational rules</h2><ul><li>Loans last 14 days by default.</li><li>Overdue fine is ₹5 per late day.</li><li>Database constraints and transaction locks protect copy counts.</li><li>Use HTTPS and restrict admin access before any public deployment.</li></ul></div>
+<%@ include file="bottom.jspf" %>

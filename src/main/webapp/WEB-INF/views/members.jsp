@@ -1,0 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" %><%@ taglib prefix="c" uri="jakarta.tags.core" %><%@ include file="top.jspf" %>
+<h1>Members</h1>
+<div class="card"><h2>Add member</h2><form method="post" class="form-grid"><input type="hidden" name="action" value="add"><label>Full name<input name="full_name" required></label><label>Email<input name="email" type="email" required></label><label>Phone<input name="phone"></label><button>Add member</button></form></div>
+<div class="card"><h2>Member register</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Status</th><th>Actions</th></tr></thead><tbody><c:forEach items="${items}" var="m"><tr><td>${m.id}</td><td>${m.full_name}</td><td>${m.email}</td><td>${m.phone}</td><td>${m.status}</td><td><form method="post" class="inline"><input type="hidden" name="action" value="delete"><input type="hidden" name="id" value="${m.id}"><button class="danger" onclick="return confirm('Delete this member?')">Delete</button></form></td></tr></c:forEach></tbody></table></div></div>
+<%@ include file="bottom.jspf" %>
